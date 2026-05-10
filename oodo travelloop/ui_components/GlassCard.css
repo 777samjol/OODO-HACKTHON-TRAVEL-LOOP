@@ -1,0 +1,155 @@
+/* GlassCard.css */
+
+/* Background wrapper for the demo and container to show off the glass effect */
+.glass-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: #0f172a;
+  /* Deep premium blue/black */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Animated background orbs to make the glass effect visible */
+.glass-container::before,
+.glass-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.glass-container::before {
+  width: 400px;
+  height: 400px;
+  background: rgba(139, 92, 246, 0.5);
+  /* Vibrant purple */
+  top: -100px;
+  left: -100px;
+}
+
+.glass-container::after {
+  width: 500px;
+  height: 500px;
+  background: rgba(56, 189, 248, 0.5);
+  /* Vibrant blue */
+  bottom: -150px;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(50px) scale(1.1);
+  }
+}
+
+/* The actual glass card styling */
+.glass-card {
+  position: relative;
+  z-index: 1;
+  width: 320px;
+  border-radius: 20px;
+  /* Glassmorphism properties */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Shimmer effect inside the card */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  transition: all 0.5s;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.glass-card:hover::before {
+  left: 200%;
+  transition: left 0.8s ease-in-out;
+}
+
+.glass-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-card-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card-description {
+  margin: 0 0 1.5rem 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.glass-card-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.glass-card-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traveloop | Itinerary</title>
+  <meta name="description" content="Your day-by-day travel itinerary planner.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/itinerary.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="topbar-title">Itinerary</h1>
+      </div>
+      <div class="topbar-right">
+        <button class="btn btn-outline btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><share/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+          Share
+        </button>
+        <button class="btn btn-primary btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Activity
+        </button>
+      </div>
+    </header>
+
+    <main class="page-content" style="max-width:100%">
+      <!-- Trip Header -->
+      <div class="trip-header-card">
+        <img class="trip-header-img" src="assets/dest2.png" alt="Japan">
+        <div class="trip-header-body">
+          <div>
+            <span class="badge badge-accent" style="margin-bottom:8px">🏛️ Cultural</span>
+            <h2>Japan in Bloom</h2>
+            <div class="trip-meta-pills">
+              <div class="trip-meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Jun 14 – Jun 24</div>
+              <div class="trip-meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 10 Days</div>
+              <div class="trip-meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 2 Travellers</div>
+              <div class="trip-meta-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Tokyo, Kyoto, Osaka</div>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:700;color:var(--primary)">₹1,10,000</div>
+            <div style="font-size:12px;color:var(--text-3)">per person · all inclusive</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="itinerary-layout">
+        <!-- Day-wise Timeline -->
+        <div id="itineraryDays">
+          <!-- Day 1 -->
+          <div class="day-block">
+            <div class="day-header">
+              <div class="day-number">1</div>
+              <div>
+                <div class="day-label">Day 1 — Arrival in Tokyo</div>
+                <div class="day-date">June 14, 2026 · Thursday</div>
+              </div>
+            </div>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-time">10:30</div>
+                <div class="activity-content">
+                  <div class="activity-type type-travel">✈️ Flight</div>
+                  <h4>Arrive at Narita International Airport</h4>
+                  <p>Flight AI-307 · Terminal 2 · Immigration &amp; Customs</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-time">13:00</div>
+                <div class="activity-content">
+                  <div class="activity-type type-hotel">🏨 Hotel</div>
+                  <h4>Check-in — Park Hyatt Tokyo</h4>
+                  <p>Shinjuku · 5-star · Deluxe City View Room</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-time">18:00</div>
+                <div class="activity-content">
+                  <div class="activity-type type-food">🍜 Dinner</div>
+                  <h4>Shinjuku Golden Gai</h4>
+                  <p>Explore the famous alley bars &amp; local ramen</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 2 -->
+          <div class="day-block">
+            <div class="day-header">
+              <div class="day-number">2</div>
+              <div>
+                <div class="day-label">Day 2 — Tokyo Sightseeing</div>
+                <div class="day-date">June 15, 2026 · Friday</div>
+              </div>
+            </div>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-time">09:00</div>
+                <div class="activity-content">
+                  <div class="activity-type type-activity">🗼 Activity</div>
+                  <h4>Senso-ji Temple, Asakusa</h4>
+                  <p>Tokyo's most famous Buddhist temple · Morning golden hour visit</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-time">12:30</div>
+                <div class="activity-content">
+                  <div class="activity-type type-food">🍱 Lunch</div>
+                  <h4>Tsukiji Outer Market</h4>
+                  <p>Fresh sushi, tamago, and street food</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-time">15:00</div>
+                <div class="activity-content">
+                  <div class="activity-type type-activity">🌸 Activity</div>
+                  <h4>Shinjuku Gyoen National Garden</h4>
+                  <p>Cherry blossoms &amp; Japanese garden stroll</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 3 -->
+          <div class="day-block">
+            <div class="day-header">
+              <div class="day-number">3</div>
+              <div>
+                <div class="day-label">Day 3 — Kyoto by Bullet Train</div>
+                <div class="day-date">June 16, 2026 · Saturday</div>
+              </div>
+            </div>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-time">07:30</div>
+                <div class="activity-content">
+                  <div class="activity-type type-travel">🚄 Train</div>
+                  <h4>Shinkansen to Kyoto</h4>
+                  <p>Tokyo Station → Kyoto Station · 2h 15m · Reserved seats</p>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div class="activity-time">11:00</div>
+                <div class="activity-content">
+                  <div class="activity-type type-activity">🏯 Activity</div>
+                  <h4>Fushimi Inari Taisha</h4>
+                  <p>Famous torii gate trail · Approx 2hr hike</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Summary -->
+        <div class="itinerary-summary">
+          <div class="summary-card">
+            <h3>Trip Summary</h3>
+            <div class="summary-row"><span class="label">Destination</span><span class="value">Japan</span></div>
+            <div class="summary-row"><span class="label">Duration</span><span class="value">10 Days</span></div>
+            <div class="summary-row"><span class="label">Travellers</span><span class="value">2 People</span></div>
+            <div class="summary-row"><span class="label">Activities</span><span class="value">24 Planned</span></div>
+            <div class="summary-row"><span class="label">Meals</span><span class="value">18 Included</span></div>
+            <div class="summary-row"><span class="label">Total Cost</span><span class="value" style="color:var(--primary)">₹1,10,000</span></div>
+          </div>
+
+          <div class="map-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p>Interactive map coming soon</p>
+          </div>
+
+          <div class="summary-card">
+            <h3>Packing Checklist</h3>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+              <label class="check-item"><input type="checkbox" checked><span class="checkmark-box"></span> Passport &amp; Visa</label>
+              <label class="check-item"><input type="checkbox" checked><span class="checkmark-box"></span> Travel Insurance</label>
+              <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> JR Rail Pass</label>
+              <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> Pocket WiFi</label>
+              <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> IC Card (Suica)</label>
+              <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> Universal adapter</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/nav.js"></script>
+<script src="js/itinerary.js"></script>
+</body>
+</html>

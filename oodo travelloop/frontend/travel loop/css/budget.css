@@ -1,0 +1,53 @@
+/* BUDGET PAGE — VINTAGE */
+.budget-summary-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+.chart-section {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border); border-radius: var(--radius-md);
+  padding: 24px; display: flex; align-items: center; gap: 32px; margin-bottom: 24px;
+  position: relative; overflow: hidden;
+}
+.chart-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--glass-shine), transparent); }
+.donut-wrap { position: relative; width: 140px; height: 140px; flex-shrink: 0; }
+.donut-svg { width: 140px; height: 140px; transform: rotate(-90deg); }
+.donut-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.donut-center .amount { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; }
+.donut-center .label-txt { font-size: 10px; color: var(--text-3); letter-spacing: 1px; text-transform: uppercase; }
+.chart-legend { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 12.5px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+
+.expense-list { display: flex; flex-direction: column; }
+.expense-item { display: flex; align-items: center; gap: 14px; padding: 13px 18px; border-bottom: 1px solid var(--border); transition: background var(--trans); }
+.expense-item:last-child { border-bottom: none; }
+.expense-item:hover { background: rgba(200,151,74,0.04); }
+.expense-icon { width: 36px; height: 36px; border-radius: var(--radius-sm); display: grid; place-items: center; flex-shrink: 0; font-size: 16px; }
+.expense-info { flex: 1; min-width: 0; }
+.expense-info .name { font-size: 13.5px; font-weight: 500; font-family: 'Playfair Display', serif; }
+.expense-info .date { font-size: 11px; color: var(--text-3); letter-spacing: 0.3px; }
+.expense-amount { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; }
+.expense-amount.debit  { color: var(--danger); }
+.expense-amount.credit { color: var(--success); }
+
+.budget-bar-list { display: flex; flex-direction: column; gap: 14px; }
+.budget-bar-head { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px; }
+.budget-bar-head .cat { color: var(--text-2); }
+.budget-bar-head .amounts { font-weight: 600; font-family: 'Playfair Display', serif; }
+
+.add-expense-btn {
+  width: 100%; padding: 12px;
+  background: rgba(200,151,74,0.06);
+  border: 1.5px dashed var(--border-active);
+  border-radius: var(--radius-sm);
+  color: var(--primary); font-size: 12.5px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  letter-spacing: 0.5px; transition: all var(--trans);
+}
+.add-expense-btn:hover { background: rgba(200,151,74,0.1); }
+.add-expense-btn svg { width: 15px; height: 15px; }
+
+@media (max-width: 900px) {
+  .budget-summary-grid { grid-template-columns: 1fr 1fr; }
+  .chart-section { flex-direction: column; }
+  .chart-legend { grid-template-columns: 1fr; }
+}

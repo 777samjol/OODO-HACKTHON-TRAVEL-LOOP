@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traveloop | Discover the World</title>
+  <meta name="description" content="Discover breathtaking destinations around the world with Traveloop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/discover.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="topnav" id="topnav">
+    <a href="discover.html" class="nav-logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      </div>
+      <span class="logo-text">Traveloop</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link">News</a></li>
+      <li><a href="#" class="nav-link active">Destinations</a></li>
+      <li><a href="#" class="nav-link">Blog</a></li>
+      <li><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="nav-search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <span class="nav-greeting">Hello, Anney!</span>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+
+    <!-- Background Slides -->
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('assets/indonesia.png')"></div>
+      <div class="hero-slide" style="background-image:url('assets/dest3.png')"></div>
+      <div class="hero-slide" style="background-image:url('assets/dest1.png')"></div>
+    </div>
+
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Left slider dots -->
+    <div class="slider-dots" id="sliderDots">
+      <button class="slider-dot active" data-i="0" aria-label="Slide 1"></button>
+      <button class="slider-dot" data-i="1" aria-label="Slide 2"></button>
+      <button class="slider-dot" data-i="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-intro">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Discover
+        </div>
+        <div class="hero-country" id="heroCountry">
+          <div class="country-line line1" id="heroLine1">DISCOVER</div>
+          <div class="country-line line2" id="heroLine2">INDONESIA</div>
+        </div>
+        <p class="hero-description" id="heroDesc">
+          The jungle and other sanctuaries are home to elephants, langur monkeys and tigers.
+          As the largest archipelagic country in the world, Indonesia is blessed with so many
+          different people, cultures, traditions, artworks, food, animals, plants, landscapes.
+        </p>
+        <div class="hero-actions">
+          <a href="explore.html" class="btn-explore">
+            Explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <div class="hero-rating">
+            <div class="rating-stars">★★★★★</div>
+            <div class="rating-text">4.9 / 5 · 2,400 reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Destination Cards -->
+    <div class="dest-cards" id="destCards">
+      <div class="dest-card active" id="card1">
+        <img src="assets/thailand.png" alt="Buddha Temple, Thailand" class="dest-card-img">
+        <div class="dest-card-body">
+          <div class="dest-card-name">Buddha Temple, Thailand</div>
+          <div class="dest-card-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span class="dim">★</span>
+          </div>
+        </div>
+        <button class="card-save-btn" aria-label="Save">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </div>
+      <div class="dest-card" id="card2">
+        <img src="assets/bali.png" alt="Broken Beach, Bali" class="dest-card-img">
+        <div class="dest-card-body">
+          <div class="dest-card-name">Broken Beach, Bali</div>
+          <div class="dest-card-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </div>
+        <button class="card-save-btn" aria-label="Save">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom scroll hint -->
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- DESTINATIONS SECTION -->
+  <section class="destinations-section">
+    <div class="dest-section-header">
+      <div>
+        <div class="section-eyebrow">Curated picks</div>
+        <h2 class="section-title">Top <em>Destinations</em></h2>
+      </div>
+      <a href="explore.html" class="view-all-btn">
+        View all destinations
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="dest-grid">
+      <div class="dest-grid-card large" style="background-image:url('assets/indonesia.png')">
+        <div class="grid-card-overlay"></div>
+        <div class="grid-card-body">
+          <div class="grid-card-tag">🌿 Nature</div>
+          <div class="grid-card-name">Indonesia</div>
+          <div class="grid-card-meta">From ₹85,000 · 7 days</div>
+        </div>
+        <button class="card-save-btn white">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </div>
+      <div class="dest-grid-card" style="background-image:url('assets/thailand.png')">
+        <div class="grid-card-overlay"></div>
+        <div class="grid-card-body">
+          <div class="grid-card-tag">🏛️ Culture</div>
+          <div class="grid-card-name">Thailand</div>
+          <div class="grid-card-meta">From ₹65,000 · 6 days</div>
+        </div>
+        <button class="card-save-btn white">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </div>
+      <div class="dest-grid-card" style="background-image:url('assets/bali.png')">
+        <div class="grid-card-overlay"></div>
+        <div class="grid-card-body">
+          <div class="grid-card-tag">🏖️ Beach</div>
+          <div class="grid-card-name">Bali, Indonesia</div>
+          <div class="grid-card-meta">From ₹72,000 · 5 days</div>
+        </div>
+        <button class="card-save-btn white">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-number">120+</div>
+      <div class="stat-label">Destinations</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">48K</div>
+      <div class="stat-label">Happy Travellers</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">98%</div>
+      <div class="stat-label">Satisfaction Rate</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">12+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg" style="background-image:url('assets/dest3.png')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <div class="cta-eyebrow">Ready to explore?</div>
+      <h2 class="cta-title">Your next adventure <em>awaits.</em></h2>
+      <p class="cta-sub">Plan your perfect trip with Traveloop — curated itineraries, smart budgeting, and a community of fellow wanderers.</p>
+      <div class="cta-actions">
+        <a href="explore.html" class="cta-btn-primary">Start Exploring</a>
+        <a href="index.html" class="cta-btn-ghost">Sign In →</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/discover.js"></script>
+</body>
+</html>

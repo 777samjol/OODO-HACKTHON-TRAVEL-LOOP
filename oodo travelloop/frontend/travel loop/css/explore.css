@@ -1,0 +1,50 @@
+/* EXPLORE PAGE — VINTAGE */
+.explore-layout { display: grid; grid-template-columns: 270px 1fr; gap: 24px; align-items: start; }
+.filter-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md); padding: 22px;
+  position: sticky; top: calc(var(--header-h) + 16px);
+  position: relative; overflow: hidden;
+}
+.filter-panel::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-shine), transparent);
+}
+.filter-panel h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; font-weight: 600; margin-bottom: 18px;
+}
+.filter-section { margin-bottom: 20px; }
+.filter-section-title {
+  font-size: 9px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--text-3); margin-bottom: 10px;
+}
+/* Range Slider */
+.range-input {
+  width: 100%; -webkit-appearance: none; appearance: none;
+  height: 3px; border-radius: 50px; outline: none;
+  background: linear-gradient(90deg, var(--primary) var(--pct,50%), rgba(200,151,74,0.15) var(--pct,50%));
+}
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px;
+  border-radius: 50%; background: var(--primary);
+  box-shadow: 0 0 8px var(--primary-glow); cursor: pointer;
+}
+.range-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-3); margin-top: 6px; }
+
+/* Results */
+.results-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.results-count { font-size: 12px; color: var(--text-3); letter-spacing: 0.3px; }
+.sort-select {
+  background: rgba(200,151,74,0.06); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 8px 12px;
+  color: var(--text-1); font-size: 12.5px; outline: none; font-family: inherit;
+}
+.explore-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+
+@media (max-width: 900px) {
+  .explore-layout { grid-template-columns: 1fr; }
+  .filter-panel { position: static; }
+}

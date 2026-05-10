@@ -1,0 +1,66 @@
+/* HOME PAGE — VINTAGE LIQUID GLASS */
+
+/* Hero Banner */
+.hero-banner {
+  position: relative; border-radius: var(--radius-lg);
+  overflow: hidden; height: 310px; margin-bottom: 28px;
+}
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s var(--ease); }
+.hero-slide.active { opacity: 1; }
+.hero-slide img { width: 100%; height: 100%; object-fit: cover; filter: sepia(20%) contrast(1.1) brightness(0.85); }
+.hero-slide::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(14,10,4,0.82) 0%, rgba(14,10,4,0.3) 55%, transparent 100%);
+}
+/* vintage vignette */
+.hero-banner::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: var(--radius-lg);
+  box-shadow: inset 0 0 60px rgba(14,10,4,0.6);
+  z-index: 2; pointer-events: none;
+}
+.hero-content {
+  position: absolute; left: 36px; bottom: 36px; z-index: 3;
+}
+.hero-content .hero-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--primary); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.hero-content .hero-label::before, .hero-content .hero-label::after {
+  content: ''; width: 20px; height: 1px; background: var(--primary); opacity: 0.5;
+}
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; font-weight: 700; letter-spacing: -0.3px;
+  line-height: 1.2; margin-bottom: 10px; color: var(--text-1);
+}
+.hero-content p { font-size: 13px; color: rgba(240,228,202,0.65); margin-bottom: 18px; letter-spacing: 0.3px; }
+.hero-dots { position: absolute; right: 22px; bottom: 22px; display: flex; gap: 7px; z-index: 4; }
+.hero-dot {
+  width: 6px; height: 6px; border-radius: 50%; border: none;
+  background: rgba(240,228,202,0.3); transition: all var(--trans); cursor: pointer;
+}
+.hero-dot.active { background: var(--primary); width: 20px; border-radius: 50px; }
+
+/* Stats Row */
+.stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 28px; }
+
+/* Category Chips */
+.cat-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.cat-chip {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 50px;
+  background: rgba(200,151,74,0.05);
+  border: 1px solid var(--border);
+  font-size: 12.5px; font-weight: 500; color: var(--text-2);
+  transition: all var(--trans); cursor: pointer; letter-spacing: 0.2px;
+}
+.cat-chip.active { border-color: var(--primary); color: var(--primary); background: var(--primary-glow); }
+.cat-chip:hover:not(.active) { border-color: var(--border-active); color: var(--text-1); }
+.cat-chip svg { width: 14px; height: 14px; }
+
+/* Trip Card */
+.trip-card { cursor: pointer; }
+.trip-card .card-img { aspect-ratio: 16/9; }

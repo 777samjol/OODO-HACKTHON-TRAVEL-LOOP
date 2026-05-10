@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traveloop | Budget Tracker</title>
+  <meta name="description" content="Track and manage your travel budget in real time.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/budget.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="topbar-title">Budget Tracker</h1>
+      </div>
+      <div class="topbar-right">
+        <select class="sort-select" aria-label="Select Trip" style="font-size:13px">
+          <option>Japan in Bloom</option>
+          <option>Maldives Escape</option>
+          <option>Amalfi Coast</option>
+        </select>
+        <button class="btn btn-primary btn-sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Expense
+        </button>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <!-- Summary Stats -->
+      <div class="budget-summary-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Budget</div>
+          <div class="stat-value">₹1,10,000</div>
+          <div class="stat-sub">For 2 Travellers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Spent So Far</div>
+          <div class="stat-value" style="color:var(--danger)">₹38,500</div>
+          <div class="stat-sub">35% used <span class="stat-badge down">↑ 8%</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Remaining</div>
+          <div class="stat-value" style="color:var(--success)">₹71,500</div>
+          <div class="stat-sub">65% left</div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:20px;margin-bottom:24px">
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:10px">
+          <span style="color:var(--text-2)">Budget used</span>
+          <span style="font-weight:600">₹38,500 / ₹1,10,000</span>
+        </div>
+        <div class="progress-bar" style="height:10px">
+          <div class="progress-fill primary" style="width:35%"></div>
+        </div>
+      </div>
+
+      <!-- AI Alerts -->
+      <div class="card" style="padding:20px;margin-bottom:24px;border: 1px solid rgba(167, 139, 250, 0.4); background: rgba(139, 92, 246, 0.05);">
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+          <span style="color:#a78bfa">✨ AI Budget Analyst</span>
+        </h3>
+        <ul id="aiAlertsList" style="list-style-type:none;padding:0;margin:0;font-size:14px;color:var(--text-2);line-height:1.6">
+          <li style="display:flex;align-items:center;gap:8px">
+            <span class="spinner" style="width:16px;height:16px;border-top-color:#a78bfa"></span>
+            Generating financial insights...
+          </li>
+        </ul>
+      </div>
+
+      <div class="grid-2">
+        <!-- Donut Chart -->
+        <div class="chart-section" style="margin-bottom:0">
+          <div class="donut-wrap">
+            <svg class="donut-svg" viewBox="0 0 100 100" id="donutSvg">
+              <!-- Segments rendered by JS -->
+            </svg>
+            <div class="donut-center">
+              <div class="amount">₹38.5K</div>
+              <div class="label-txt">spent</div>
+            </div>
+          </div>
+          <div class="chart-legend" id="chartLegend">
+            <!-- rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Budget Bars -->
+        <div class="card" style="padding:20px">
+          <h3 style="font-size:14px;font-weight:600;margin-bottom:16px">By Category</h3>
+          <div class="budget-bar-list" id="budgetBars">
+            <!-- rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Expense List -->
+      <div class="section-head mt-24">
+        <h2>Recent Expenses</h2>
+        <button class="btn btn-ghost btn-sm">View all →</button>
+      </div>
+      <div class="card">
+        <div class="expense-list" id="expenseList">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Add Expense -->
+      <button class="add-expense-btn mt-16" id="addExpBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add New Expense
+      </button>
+    </main>
+  </div>
+</div>
+<script src="js/nav.js"></script>
+<script src="js/budget.js"></script>
+</body>
+</html>

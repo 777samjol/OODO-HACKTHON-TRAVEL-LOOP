@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traveloop | AI Planner</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+  <style>
+    .planner-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+    }
+    .planner-container h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      background: linear-gradient(90deg, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: #a78bfa;
+      box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+    }
+    .glow-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+      color: white;
+      border: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+      transition: all 0.3s;
+      position: relative;
+    }
+    .glow-btn:hover {
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+      transform: translateY(-2px);
+    }
+    .loading-overlay {
+      display: none;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 20px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      backdrop-filter: blur(5px);
+    }
+    .spinner {
+      border: 4px solid rgba(255,255,255,0.1);
+      border-top-color: #a78bfa;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="topbar-title">AI Trip Planner</h1>
+      </div>
+      <div class="topbar-right">
+        <a href="profile.html">
+          <img src="assets/avatar.png" class="avatar" width="36" height="36" alt="Profile" style="border:2px solid var(--border-active);border-radius:50%">
+        </a>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <div class="planner-container">
+        <h2>Generate Your Dream Trip</h2>
+        <form id="plannerForm">
+          <div class="form-group">
+            <label>Where do you want to go?</label>
+            <input type="text" id="dest" class="form-input" placeholder="e.g. Tokyo, Japan" required>
+          </div>
+          <div style="display:flex; gap:16px; margin-bottom: 20px;">
+            <div style="flex:1">
+              <label>Start Date</label>
+              <input type="date" id="startDate" class="form-input" required>
+            </div>
+            <div style="flex:1">
+              <label>End Date</label>
+              <input type="date" id="endDate" class="form-input" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Budget Level</label>
+            <select id="budget" class="form-input">
+              <option value="low">Budget-Friendly</option>
+              <option value="medium" selected>Standard</option>
+              <option value="high">Luxury</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Travel Interests (comma separated)</label>
+            <input type="text" id="interests" class="form-input" placeholder="e.g. Food, Temples, Anime, Hiking">
+          </div>
+          <button type="submit" class="glow-btn" id="generateBtn">
+            Generate with AI ✦
+          </button>
+        </form>
+
+        <div class="loading-overlay" id="loadingOverlay">
+          <div class="spinner"></div>
+          <h3 style="color: white; margin: 0;">AI is crafting your itinerary...</h3>
+          <p style="color: #94a3b8; font-size: 0.9rem; text-align:center; max-width: 80%; margin-top: 10px;">
+            Analyzing flights, matching weather patterns, and finding the best spots.
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/nav.js"></script>
+<script src="js/planner.js"></script>
+</body>
+</html>

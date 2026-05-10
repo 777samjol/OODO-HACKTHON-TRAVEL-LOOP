@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traveloop | Explore</title>
+  <meta name="description" content="Search and filter thousands of curated travel destinations.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/explore.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="topbar-title">Explore</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="search-bar" style="min-width:280px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="searchInput" placeholder="Where do you want to go?" aria-label="Search destinations">
+        </div>
+        <button class="icon-btn" id="notifBtn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="badge">3</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-content" style="max-width:100%">
+      <div class="explore-layout">
+        <!-- Filter Panel -->
+        <aside class="filter-panel" aria-label="Filters">
+          <h3>Filters</h3>
+
+          <div class="filter-section">
+            <div class="filter-section-title">Budget (per person)</div>
+            <div class="range-slider">
+              <input type="range" class="range-input" id="budgetRange" min="10000" max="500000" value="200000" step="5000" style="--pct:38%">
+            </div>
+            <div class="range-labels">
+              <span>₹10,000</span>
+              <span id="budgetVal">₹2,00,000</span>
+              <span>₹5,00,000</span>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-section-title">Duration</div>
+            <label class="check-item"><input type="checkbox" checked><span class="checkmark-box"></span> 1–3 Days</label>
+            <label class="check-item"><input type="checkbox" checked><span class="checkmark-box"></span> 4–7 Days</label>
+            <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> 8–14 Days</label>
+            <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> 15+ Days</label>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-section-title">Trip Type</div>
+            <label class="check-item"><input type="checkbox" checked><span class="checkmark-box"></span> Beach</label>
+            <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> Mountains</label>
+            <label class="check-item"><input type="checkbox" checked><span class="checkmark-box"></span> Cultural</label>
+            <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> Adventure</label>
+            <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> City Break</label>
+          </div>
+
+          <div class="filter-section">
+            <div class="filter-section-title">Rating</div>
+            <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> ⭐ 5.0</label>
+            <label class="check-item"><input type="checkbox" checked><span class="checkmark-box"></span> ⭐ 4.0+</label>
+            <label class="check-item"><input type="checkbox"><span class="checkmark-box"></span> ⭐ 3.0+</label>
+          </div>
+
+          <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px" id="applyFilters">Apply Filters</button>
+          <button class="btn btn-outline" style="width:100%;justify-content:center;margin-top:8px" id="clearFilters">Clear All</button>
+        </aside>
+
+        <!-- Results -->
+        <div>
+          <div class="results-header">
+            <span class="results-count" id="resultsCount">Showing 6 results</span>
+            <select class="sort-select" id="sortSelect" aria-label="Sort by">
+              <option>Sort: Recommended</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Rating</option>
+              <option>Duration</option>
+            </select>
+          </div>
+
+          <div class="explore-grid" id="exploreGrid">
+            <!-- Cards injected by JS -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/nav.js"></script>
+<script src="js/explore.js"></script>
+</body>
+</html>

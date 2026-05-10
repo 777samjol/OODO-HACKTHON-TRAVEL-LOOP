@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traveloop | Community</title>
+  <meta name="description" content="Connect with fellow travellers, share experiences and get inspired.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/community.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="topbar-title">Community</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" placeholder="Search posts…" aria-label="Search community">
+        </div>
+        <button class="btn btn-primary btn-sm" id="newPostBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Post
+        </button>
+      </div>
+    </header>
+
+    <main class="page-content" style="max-width:100%">
+      <!-- Tabs -->
+      <div class="tabs" style="max-width:340px;margin-bottom:24px">
+        <button class="tab-btn active" id="tabFeed">Feed</button>
+        <button class="tab-btn" id="tabTrending">Trending</button>
+        <button class="tab-btn" id="tabFollowing">Following</button>
+      </div>
+
+      <div class="community-layout">
+        <!-- Posts Feed -->
+        <div id="postFeed">
+          <!-- Post 1 -->
+          <div class="post-card">
+            <div class="post-header">
+              <img src="assets/avatar.png" alt="Alex Morgan">
+              <div class="post-author">
+                <div class="name">Alex Morgan</div>
+                <div class="time">2 hours ago</div>
+              </div>
+              <div class="post-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Kyoto, Japan
+              </div>
+            </div>
+            <img class="post-img" src="assets/dest2.png" alt="Kyoto">
+            <div class="post-body">
+              <p>The cherry blossoms at Fushimi Inari were absolutely breathtaking! 🌸 Pro tip: arrive before 7AM to beat the crowds and catch the most magical morning light through the torii gates.</p>
+            </div>
+            <div class="post-actions">
+              <button class="post-action-btn liked" id="likeBtn1">
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                248 Likes
+              </button>
+              <button class="post-action-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                32 Comments
+              </button>
+              <button class="post-action-btn" style="margin-left:auto">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                Share
+              </button>
+            </div>
+          </div>
+
+          <!-- Post 2 -->
+          <div class="post-card">
+            <div class="post-header">
+              <img src="assets/avatar.png" alt="Rahul Desai" style="filter:hue-rotate(60deg)">
+              <div class="post-author">
+                <div class="name">Rahul Desai</div>
+                <div class="time">Yesterday</div>
+              </div>
+              <div class="post-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Positano, Italy
+              </div>
+            </div>
+            <img class="post-img" src="assets/dest3.png" alt="Amalfi">
+            <div class="post-body">
+              <p>Positano at sunset is the most romantic place I've ever been. The colours of the buildings against the deep blue sea are just unreal 🎨🌅 Highly recommend staying at a cliffside hotel for the views.</p>
+            </div>
+            <div class="post-actions">
+              <button class="post-action-btn" id="likeBtn2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                184 Likes
+              </button>
+              <button class="post-action-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                21 Comments
+              </button>
+              <button class="post-action-btn" style="margin-left:auto">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                Share
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Sidebar -->
+        <aside class="community-sidebar">
+          <div class="widget">
+            <h3>Suggested Travellers</h3>
+            <div class="traveler-item">
+              <img src="assets/avatar.png" alt="Priya Shah" style="filter:hue-rotate(120deg)">
+              <div class="info">
+                <div class="name">Priya Shah</div>
+                <div class="trips">14 trips · 5 countries</div>
+              </div>
+              <button class="follow-btn">Follow</button>
+            </div>
+            <div class="traveler-item">
+              <img src="assets/avatar.png" alt="Marco Rossi" style="filter:hue-rotate(200deg)">
+              <div class="info">
+                <div class="name">Marco Rossi</div>
+                <div class="trips">22 trips · 11 countries</div>
+              </div>
+              <button class="follow-btn">Follow</button>
+            </div>
+            <div class="traveler-item">
+              <img src="assets/avatar.png" alt="Yuki Tanaka" style="filter:hue-rotate(290deg)">
+              <div class="info">
+                <div class="name">Yuki Tanaka</div>
+                <div class="trips">9 trips · 4 countries</div>
+              </div>
+              <button class="follow-btn">Follow</button>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h3>Trending Topics</h3>
+            <div class="tag-cloud">
+              <span class="topic-tag">#SoloTravel</span>
+              <span class="topic-tag">#JapanGuide</span>
+              <span class="topic-tag">#BudgetTips</span>
+              <span class="topic-tag">#Europe2026</span>
+              <span class="topic-tag">#BeachLife</span>
+              <span class="topic-tag">#FoodTravel</span>
+              <span class="topic-tag">#CulturalTrips</span>
+              <span class="topic-tag">#Backpacking</span>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h3>Your Activity</h3>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;font-size:13px">
+                <span style="color:var(--text-2)">Posts</span><span style="font-weight:600">12</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px">
+                <span style="color:var(--text-2)">Followers</span><span style="font-weight:600">148</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px">
+                <span style="color:var(--text-2)">Following</span><span style="font-weight:600">34</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:13px">
+                <span style="color:var(--text-2)">Likes Received</span><span style="font-weight:600;color:var(--danger)">2.4k</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/nav.js"></script>
+<script src="js/community.js"></script>
+</body>
+</html>
